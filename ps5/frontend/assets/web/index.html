@@ -384,6 +384,10 @@ const GROUPS = [
     { key: "filter", label: "Texture filtering", type: "seg", def: "2", short: "% filtering",
       options: [["0","Nearest"],["2","PS2"],["1","Bilinear (forced)"],["3","Not sprites"]],
       hint: "PS2 smooths what the game asks to be smoothed, as a PS2 does: the right one for nearly every game. Bilinear (forced) smooths everything, full-screen effects too, which can blur, shift or ghost them (PCSX2 calls it unsafe)." },
+    // 2026-10-30 (AI-assisted; issue #86): PCSX2's EmuCore/GS/dithering_ps2, also available to each game's profile.
+    { key: "dithering_ps2", label: "Dithering", type: "seg", def: "2", short: "Dither %",
+      options: [["0","Off"],["1","Scaled"],["2","Unscaled"],["3","Force 32bit"]],
+      hint: "Controls how the game's 16-bit color dithering is applied. Force 32bit can reduce color banding in some games; compare it with Unscaled if colors or effects look different." },
     { key: "MaxAnisotropy", label: "Anisotropic filtering", type: "seg", def: "0", short: "AF %",
       options: [["0","Off"],["2","2x"],["4","4x"],["8","8x"],["16","16x"]] },
     { key: "accurate_blending_unit", label: "Blending accuracy", type: "seg", def: "1", short: "Blending %",
